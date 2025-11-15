@@ -7,7 +7,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-26">
 
                 <Link href="/" className="shrink-0">
-                    <Image src="/Logo.png" alt="Logo" width={160} height={80}  className="drop-shadow-lg"/>
+                    <Image src="/logo-white.png" alt="Logo" width={160} height={80}  className="drop-shadow-lg"/>
                 </Link>
 
                 {/* Menu Desktop */}
@@ -25,13 +25,13 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="relative inline-block group">
+                        <Link href="/Product" className="relative inline-block group">
                             Order
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#505050] transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="relative inline-block group">
+                        <Link href="/Partners" className="relative inline-block group">
                             Partners
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#505050] transition-all duration-300 group-hover:w-full"></span>
                         </Link>
