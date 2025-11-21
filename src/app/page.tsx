@@ -16,7 +16,7 @@ export default function Home() {
       <main
         id="Home"
         className="relative w-full min-h-screen bg-cover bg-center"
-        style={{ backgroundImage: 'url("/BG.png")' }}
+        style={{ backgroundImage: 'url("/BG-NEW.png")' }}
       >
         <div
           className="relative flex min-h-screen flex-col items-center justify-center gap-6 sm:gap-8 px-4 sm:px-8 text-center"
@@ -27,8 +27,8 @@ export default function Home() {
               animate={isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl font-lato" style={{ color: "#505050" }}>
-                Nature's Beauty Without Worry
+              <h1 className="font-bold text-3xl sm:text-4xl lg:text-8xl font-lato text-black">
+                Equality in Quality
               </h1>
             </motion.div>
 
@@ -37,8 +37,8 @@ export default function Home() {
               animate={isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-sm sm:text-base lg:text-lg text-[#505050] max-w-2xl font-poppins">
-                Organic clean. No harsh stuff. Just pure, powerful washing.
+              <p className="mx-auto items-center justify-center text-sm sm:text-base lg:text-2xl text-black max-w-2xl font-poppins">
+                Everyone deserves a high quality product
               </p>
             </motion.div>
           </section>

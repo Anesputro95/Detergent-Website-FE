@@ -28,7 +28,7 @@ export default function ProductPage() {
                 transition={{ duration: 0.4, delay: 0.4 }}
                 className="relative w-full max-w-4xl h-auto aspect-video group cursor-pointer">
                 <Link
-                    href="https://shopee.co.id/housessentials.id"
+                    href="https://shopee.co.id/Deterjen-Softergent-Bundling-B-3x5Liter-Housessentials-i.1362939508.29866430579?extraParams=%7B%22display_model_id%22%3A233415093399%7D"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

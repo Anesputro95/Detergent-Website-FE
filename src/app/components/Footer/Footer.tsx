@@ -29,22 +29,6 @@ export default function Footer() {
                     </Link>
 
                     <Link
-                        href="https://www.instagram.com/housessentials.id/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:scale-110 transition-transform duration-300"
-                        aria-label="Instagram"
-                    >
-                        <Image
-                            src="/Instagram.png"
-                            alt="WA"
-                            width={40}
-                            height={40}
-                            className="w-8 h-8 sm:w-10 sm:h-10"
-                        />
-                    </Link>
-
-                    <Link
                         href="https://shopee.co.id/housessentials.id"
                         target="_blank"
                         rel="noopener noreferrer"

@@ -19,7 +19,7 @@ export default function AboutUs2() {
                     transition={{ duration: 0.4, delay: 0.2 }}
                     className="relative w-full h-[300px] md:h-auto">
                     <Image
-                        src="/Image.png"
+                        src="/BG-NEW-2.png"
                         alt="Laundry Product"
                         fill
                         className="object-cover"
@@ -35,14 +35,10 @@ export default function AboutUs2() {
                         animate={isInView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.4, delay: 0.4 }}
                         className="flex flex-col justify-center p-14 bg-[#FFFCF4] gap-6">
-                        <Image src="/Icon2.png" alt="Point 1 Icon" width={64} height={64} />
                         <div className="flex flex-col gap-2">
                             <h1 className="font-lato font-bold text-lg sm:text-xl md:text-2xl text-[#505050]">
-                                Membersihkan Noda Membandel
+                                Removes tough stains
                             </h1>
-                            <p className="font-light text-sm sm:text-base text-[#505050]">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            </p>
                         </div>
                     </motion.div>
 
@@ -52,14 +48,11 @@ export default function AboutUs2() {
                         animate={isInView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.4, delay: 0.6 }}
                         className="flex flex-col justify-center p-16 bg-[#A5D4C6] gap-6">
-                        <Image src="/Icon2.png" alt="Point 2 Icon" width={64} height={64} />
                         <div className="flex flex-col gap-2 pr-0 sm:pr-6">
                             <h1 className="font-lato font-bold text-lg sm:text-xl md:text-2xl text-[#505050]">
-                                Wangi Soft dan Tahan Lama
+                               Soft and long-lasting fragrance
                             </h1>
-                            <p className="font-light text-sm sm:text-base text-[#505050]">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            </p>
+
                         </div>
                     </motion.div>
 
@@ -69,14 +62,10 @@ export default function AboutUs2() {
                         animate={isInView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.4, delay: 1 }}
                         className="flex flex-col justify-center p-14 bg-[#CBE2F0] gap-6">
-                        <Image src="/Icon2.png" alt="Point 3 Icon" width={64} height={64} />
                         <div className="flex flex-col gap-2 pr-0 sm:pr-6">
                             <h1 className="font-lato font-bold text-lg sm:text-xl md:text-2xl text-[#505050]">
-                                Melembutkan Pakaian
+                                Softens Fabric
                             </h1>
-                            <p className="font-light text-sm sm:text-base text-[#505050]">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            </p>
                         </div>
                     </motion.div>
 
@@ -86,14 +75,10 @@ export default function AboutUs2() {
                         animate={isInView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.4, delay: 1.2 }}
                         className="flex flex-col justify-center p-14 bg-[#FFFCF4] gap-6">
-                        <Image src="/Icon2.png" alt="Point 4 Icon" width={64} height={64} />
                         <div className="flex flex-col gap-2">
                             <h1 className="font-lato font-bold text-lg sm:text-xl md:text-2xl text-[#505050]">
-                                10 ml untuk 1 Kg Pakaian
+                                10 ml for 1 kg of aundry
                             </h1>
-                            <p className="font-light text-sm sm:text-base text-[#505050]">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            </p>
                         </div>
                     </motion.div>
                 </div>

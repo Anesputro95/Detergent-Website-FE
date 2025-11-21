@@ -7,7 +7,7 @@ import { useRef } from 'react';
 export default function AboutUs() {
     const ref = useRef<HTMLDivElement | null>(null);
     const isInView = useInView(ref, { once: true });
-    
+
     return (
         <>
             <main id='AboutUs' className="flex min-h-screen items-center justify-center px-4 sm:px-8 bg-[#f8f6f3]">
@@ -47,8 +47,8 @@ export default function AboutUs() {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-4">
-                                    <h3 className="font-semibold text-gray-800 text-lg">Point 1</h3>
-                                    <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                    <h3 className="font-semibold text-gray-800 text-lg">Cleans Deeply</h3>
+                                    <p className="text-sm text-gray-500">Not just clean — our formula helps preserve fabric colors, keeping your clothes looking vibrant for longer</p>
                                 </div>
                             </motion.article>
 
@@ -67,8 +67,8 @@ export default function AboutUs() {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-4">
-                                    <h3 className="font-semibold text-gray-800 text-lg">Point 2</h3>
-                                    <p className="text-sm text-gray-500">Nullam iaculis dapibus pellentesque. Suspendisse potenti. Donec facilisis ex magna, in tempor velit ultricies ac.</p>
+                                    <h3 className="font-semibold text-gray-800 text-lg">Softens Naturally</h3>
+                                    <p className="text-sm text-gray-500">Enjoy soft, smooth laundry without the need for additional fabric softener. One wash, complete care</p>
                                 </div>
                             </motion.article>
 
@@ -87,8 +87,8 @@ export default function AboutUs() {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-4">
-                                    <h3 className="font-semibold text-gray-800 text-lg">Point 3</h3>
-                                    <p className="text-sm text-gray-500">Ut eget magna faucibus, finibus dolor gravida, imperdiet urna. In posuere vestibulum bibendum. Fusce maximus neque eros, a euismod ligula congue bibendum.</p>
+                                    <h3 className="font-semibold text-gray-800 text-lg">Delicately Fragranced</h3>
+                                    <p className="text-sm text-gray-500">A gentle, non-overpowering scent that stays fresh without clashing with your personal perfume</p>
                                 </div>
                             </motion.article>
                         </div>
