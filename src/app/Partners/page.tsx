@@ -2,17 +2,25 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion, useInView } from "framer-motion";
-import Image from 'next/image';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const variants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 12 },
     visible: { opacity: 1, y: 0 }
 };
 
 export default function PartnerPage() {
-    const ref = useRef<HTMLDivElement | null>(null);
-    const isInView = useInView(ref, { margin: "-100px" });
+    const ref = useRef(null);
+    const isInView = useInView(ref, { margin: "-120px" });
+    const [isSetNamaBisnis, setIsSetNamaBisnis] = useState("");
+    const [isSetAlamat, setIsSetAlamat] = useState("");
+
+    const handleSubmit = () => {
+        const pesan = 'Halo House Essentials, saya tertarik untuk menjadi partner. Berikut detail bisnis saya:%0A%0ANama Bisnis: ' + (isSetNamaBisnis ? isSetNamaBisnis : '-') + '%0AAlamat: ' + (isSetAlamat ? isSetAlamat : '-') + '%0A%0ATerima kasih.';
+        const nomorWhatsApp = '6285282882767';
+        const urlWhatsApp = `https://wa.me/${nomorWhatsApp}?text=${pesan}`;
+        window.open(urlWhatsApp, '_blank');
+    }
 
     return (
         <main
@@ -20,142 +28,77 @@ export default function PartnerPage() {
             className="relative w-full min-h-screen bg-cover bg-center"
             style={{ backgroundImage: 'url("/BG-PARTNERS.png")' }}
         >
+            {/* Overlay */}
             <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
 
-            <div className="relative grid grid-cols-1 md:grid-cols-2 min-h-screen gap-8 md:gap-0 md:pl-8 lg:pl-16">
+            <div className="relative flex items-center justify-center min-h-screen px-6 md:px-12 lg:pl-20 ">
                 {/* LEFT SECTION */}
-                <div ref={ref} className="flex flex-col justify-center items-start gap-6 px-6 md:px-12 lg:px-16 z-10 border-b-2 md:border-b-0 md:border-r-2 border-white/50 py-12 md:py-0">
-
-                    <motion.div
+                <div
+                    ref={ref}
+                    className="flex flex-col justify-center items-center text-center gap-6 max-w-4xl"
+                >
+                    <motion.h1
                         variants={variants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
-                        transition={{ duration: 0.4 }}
+                        transition={{ duration: 0.5 }}
+                        className="text-white text-4xl md:text-5xl font-lato font-bold leading-normal drop-shadow-md"
                     >
-                        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-lato font-bold leading-snug">
-                            Tertarik Menjadi Partner? <br />
-                            Hubungi Kita Untuk Info <br />
-                            Lebih Lanjut
-                        </h1>
-                    </motion.div>
+                        Tertarik Menjadi Partner? <br />
+                        Hubungi Kita Untuk Info Lebih Lanjut
+                    </motion.h1>
 
-                    <div className="gap-4 flex flex-col w-full max-w-sm md:max-w-md mt-4">
+
+                    {/* Inputs */}
+                    <div className="w-full flex flex-col gap-4 mt-2 px-42">
                         <motion.div
                             variants={variants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            transition={{ duration: 0.4, delay: 0.2 }}
+                            transition={{ duration: 0.5, delay: 0.15 }}
                         >
-
                             <Input
-                                className="rounded-full bg-white/30 backdrop-blur-md border-none py-3 md:py-4 px-4 placeholder:text-white/80 text-white"
+                                value={isSetNamaBisnis}
+                                onChange={(e) => setIsSetNamaBisnis(e.target.value)}
+                                className="rounded-full bg-white/30 backdrop-blur-md border-none py-3 px-5 placeholder:text-white/80 text-white shadow-md"
                                 placeholder="Nama Bisnis Anda..."
                             />
                         </motion.div>
 
-
                         <motion.div
                             variants={variants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            transition={{ duration: 0.4, delay: 0.4 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
                         >
                             <Input
-                                className="rounded-full bg-white/30 backdrop-blur-md border-none py-3 md:py-4 px-4 placeholder:text-white/80 text-white"
+                                value={isSetAlamat}
+                                onChange={(e) => setIsSetAlamat(e.target.value)}
+                                className="rounded-full bg-white/30 backdrop-blur-md border-none py-3 px-5 placeholder:text-white/80 text-white shadow-md"
                                 placeholder="Alamat..."
                             />
                         </motion.div>
                     </div>
 
+                    {/* Button */}
                     <motion.div
                         variants={variants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
-                        transition={{ duration: 0.4, delay: 0.6 }}
+                        transition={{ duration: 0.5, delay: 0.45 }}
                     >
                         <Button
-                            className="rounded-full px-6 md:px-8 py-3 md:py-4 text-white font-semibold shadow-lg transition cursor-pointer"
-                            style={{ backgroundColor: '#DCA18B' }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c98a75'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#DCA18B'}
+                            onClick={handleSubmit}
+                            className="cursor-pointer rounded-full px-8 py-4 text-white font-semibold shadow-xl transition-all duration-200 hover:scale-105"
+                            style={{ backgroundColor: "#DCA18B" }}
+                            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#c98a75")}
+                            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#DCA18B")}
                         >
                             Saya Tertarik!
                         </Button>
                     </motion.div>
                 </div>
-
-                {/* RIGHT SECTION */}
-                <div className="flex flex-col justify-center items-center md:items-start px-6 md:px-12 lg:px-16 z-10 gap-4 md:gap-6 py-12 md:py-0">
-
-                    {/* CARD 1 */}
-                    <motion.div
-                        variants={variants}
-                        initial="hidden"
-                        animate={isInView ? "visible" : "hidden"}
-                        transition={{ duration: 0.4 }}
-                        className="flex items-center gap-4 w-full max-w-xl min-h-[100px] md:min-h-[110px] rounded-2xl px-6 md:px-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
-                        style={{
-                            background: "linear-gradient(90deg, rgba(255,252,244,1) 0%, rgba(255,252,244,0.70) 40%, rgba(255,252,244,0.0) 75%, rgba(255,252,244,0.0) 100%)"
-                        }}
-                    >
-                        <Image src="/Icon2.png" alt="Harga terbaik icon" width={60} height={60} className="shrink-0" />
-                        <h1 className="font-lato font-bold text-[#505050] text-sm md:text-base">
-                            Mendapatkan harga terbaik <br /> apabila menjadi mitra
-                        </h1>
-                    </motion.div>
-
-                    {/* CARD 2 */}
-                    <motion.div
-                        variants={variants}
-                        initial="hidden"
-                        animate={isInView ? "visible" : "hidden"}
-                        transition={{ duration: 0.4, delay: 0.2 }}
-                        className="flex flex-row-reverse items-center gap-4 w-full max-w-xl min-h-[100px] md:min-h-[110px] rounded-2xl px-6 md:px-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-lg"
-                        style={{
-                            background: "linear-gradient(270deg, rgba(255,252,244,1) 0%, rgba(255,252,244,0.70) 40%, rgba(255,252,244,0.0) 75%, rgba(255,252,244,0.0) 100%)"
-                        }}
-                    >
-                        <Image src="/Icon2.png" alt="Customer service icon" width={60} height={60} className="shrink-0" />
-                        <h1 className="font-lato font-bold text-[#505050] text-sm md:text-base">
-                            Customer service 24/7
-                        </h1>
-                    </motion.div>
-
-                    {/* CARD 3 */}
-                    <motion.div
-                        variants={variants}
-                        initial="hidden"
-                        animate={isInView ? "visible" : "hidden"}
-                        transition={{ duration: 0.4, delay: 0.6 }}
-                        className="flex items-center gap-4 w-full max-w-xl min-h-[100px] md:min-h-[110px] rounded-2xl px-6 md:px-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
-                        style={{
-                            background: "linear-gradient(90deg, rgba(255,252,244,1) 0%, rgba(255,252,244,0.70) 40%, rgba(255,252,244,0.0) 75%, rgba(255,252,244,0.0) 100%)"
-                        }}
-                    >
-                        <Image src="/Icon2.png" alt="Benefit icon" width={60} height={60} className="shrink-0" />
-                        <h1 className="font-lato font-bold text-[#505050] text-sm md:text-base">
-                            Lorem ipsum dolor sit <br /> amet consectetur adipiscing elit
-                        </h1>
-                    </motion.div>
-
-                    {/* CARD 4 */}
-                    <motion.div
-                        variants={variants}
-                        initial="hidden"
-                        animate={isInView ? "visible" : "hidden"}
-                        transition={{ duration: 0.4, delay: 0.8 }}
-                        className="flex flex-row-reverse items-center gap-4 w-full max-w-xl min-h-[100px] md:min-h-[110px] rounded-2xl px-6 md:px-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-lg"
-                        style={{
-                            background: "linear-gradient(270deg, rgba(255,252,244,1) 0%, rgba(255,252,244,0.70) 40%, rgba(255,252,244,0.0) 75%, rgba(255,252,244,0.0) 100%)"
-                        }}
-                    >
-                        <Image src="/Icon2.png" alt="Benefit icon" width={60} height={60} className="shrink-0" />
-                        <h1 className="font-lato font-bold text-[#505050] text-sm md:text-base">
-                            Lorem ipsum dolor sit <br /> amet consectetur adipiscing elit
-                        </h1>
-                    </motion.div>
-                </div>
             </div>
-        </main >
-    )
+        </main>
+    );
 }

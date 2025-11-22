@@ -19,7 +19,7 @@ export default function Home() {
         style={{ backgroundImage: 'url("/BG-NEW.png")' }}
       >
         <div
-          className="relative flex min-h-screen flex-col items-center justify-center gap-6 sm:gap-8 px-4 sm:px-8 text-center"
+          className="relative flex min-h-screen flex-col items-center justify-center gap-6 sm:gap-8 px-4 sm:px-8 text-center bg-black/20"
         >
           <section ref={ref} className="space-y-4 sm:space-y-6 max-w-4xl">
             <motion.div
@@ -27,7 +27,7 @@ export default function Home() {
               animate={isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h1 className="font-bold text-3xl sm:text-4xl lg:text-8xl font-lato text-black">
+              <h1 className="font-bold text-3xl sm:text-4xl lg:text-8xl font-lato text-white">
                 Equality in Quality
               </h1>
             </motion.div>
@@ -37,7 +37,7 @@ export default function Home() {
               animate={isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.5 }}
             >
-              <p className="mx-auto items-center justify-center text-sm sm:text-base lg:text-2xl text-black max-w-2xl font-poppins">
+              <p className="mx-auto font-medium items-center justify-center text-sm sm:text-base lg:text-2xl text-white/70 drop-shadow-2xl max-w-2xl font-poppins">
                 Everyone deserves a high quality product
               </p>
             </motion.div>

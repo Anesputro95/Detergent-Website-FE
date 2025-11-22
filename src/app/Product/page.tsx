@@ -5,16 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
+const variants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: { opacity: 1, y: 0 }
+};
+
 export default function ProductPage() {
     const ref = useRef<HTMLDivElement | null>(null);
     const isInView = useInView(ref, { once: true });
-    
+
     return (
         <div ref={ref} id="Product" className="relative flex min-h-screen flex-col items-center justify-center px-4 sm:px-8 lg:px-12 text-center">
             <motion.div
-                initial={{ y: -10, opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.2 }}
+                variants={variants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ duration: 0.5 }}
             >
                 <h1 className="font-bold font-lato text-3xl text-[#505050]">
                     Our Products
@@ -23,9 +29,10 @@ export default function ProductPage() {
 
             {/* WRAPPER */}
             <motion.div
-                initial={{ y: 10, opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.4 }}
+                variants={variants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ duration: 0.5 }}
                 className="relative w-full max-w-4xl h-auto aspect-video group cursor-pointer">
                 <Link
                     href="https://shopee.co.id/Deterjen-Softergent-Bundling-B-3x5Liter-Housessentials-i.1362939508.29866430579?extraParams=%7B%22display_model_id%22%3A233415093399%7D"

@@ -23,7 +23,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav ref={ref} className="fixed top-0 left-0 w-full z-50 backdrop-blur-sm bg-black/10">
+        <nav ref={ref} className="fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto flex items-center justify-between h-14 px-4 sm:px-6">
                 <motion.div
                     initial={{ y: -10, opacity: 0 }}
